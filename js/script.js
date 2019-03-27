@@ -35,10 +35,11 @@ const WeatherApp = (function () {
         const city = document.getElementById('city-input').value;
         fetchWeather(city).then(weather => {
             document.getElementById('celcius-display').innerHTML = weather.celcius
-            document.getElementById('celcius-display').innerHTML = weather.fahrenheit
+            document.getElementById('fahrenheit-display').innerHTML = weather.fahrenheit
 
         })
       })
     }
   }
 })()
+WeatherApp.attachListener()
