@@ -13,7 +13,7 @@ const WeatherApp = (function () {
     }
   }
   const fetchWeather = (city) => {
-    const URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=e686eb81691141fa6168377f12b326cd`
+    const URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&APPID=e686eb81691141fa6168377f12b326cd`
     return new Promise((resolve, reject) => {
       fetch(URL).then((response) => {
         response.json().then((res) => {
@@ -36,7 +36,6 @@ const WeatherApp = (function () {
         fetchWeather(city).then(weather => {
             document.getElementById('celcius-display').innerHTML = weather.celcius
             document.getElementById('fahrenheit-display').innerHTML = weather.fahrenheit
-
         })
       })
     }
